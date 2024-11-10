@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: backend-config
+data:
+  DB_USER: "admin"                       # Database username
+  DB_PASSWORD: "password"                 # Database password (consider using Secrets for sensitive data)
+  DB_HOST: "your-rds-endpoint.amazonaws.com" # Replace with your RDS endpoint
+  DB_PORT: "5432"                         # PostgreSQL default port
+  DB_NAME: "budget_app"                   # Database name

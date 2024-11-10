@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Budget Overview</title>
+</head>
+<body>
+    <h2>Budget Overview</h2>
+    <ul>
+        {% for category in categories %}
+            <li>{{ category.name }}: ${{ category.remaining_budget }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('main.index') }}">Back to Home</a>
+</body>
+</html>

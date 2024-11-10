@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Transactions</title>
+</head>
+<body>
+    <h2>Add Transaction</h2>
+    <form method="post" action="{{ url_for('main.transactions') }}">
+        <input type="text" name="category_id" placeholder="Category ID" required>
+        <input type="text" name="amount" placeholder="Amount" required>
+        <input type="text" name="description" placeholder="Description" required>
+        <button type="submit">Add</button>
+    </form>
+    <a href="{{ url_for('main.index') }}">Back to Home</a>
+</body>
+</html>

@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-deployment
+  labels:
+    app: budgeting-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: budgeting-app
+  template:
+    metadata:
+      labels:
+        app: budgeting-app
+    spec:
+      containers:
+      - name: backend-api
+        image: your-dockerhub-username/budgeting-app-backend:latest
+        ports:
+        - containerPort: 5000
+        envFrom:
+        - configMapRef:
+            name: backend-config

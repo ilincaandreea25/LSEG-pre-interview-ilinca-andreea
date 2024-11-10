@@ -1,11 +1,6 @@
-variable "region" {
-  description = "AWS region to deploy to"
-  default     = "us-west-2"
-}
-
-variable "vpc_cidr" {
-  description = "CIDR block for the VPC"
-  default     = "10.0.0.0/16"
+variable "secret_name" {
+  description = "Name of the secret in AWS Secrets Manager"
+  type        = string
 }
 
 variable "db_user" {

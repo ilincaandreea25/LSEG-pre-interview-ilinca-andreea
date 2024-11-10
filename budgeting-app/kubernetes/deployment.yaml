@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: backend-api
-        image: your-dockerhub-username/budgeting-app-backend:latest
+        image: ilincaandreea25/budgeting-app-backend:latest
         ports:
         - containerPort: 5000
         envFrom:

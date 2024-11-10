@@ -23,6 +23,7 @@ module "db_secrets" {
 # EKS Module
 module "eks" {
   source     = "./modules/eks"
+  vpc_id     = module.vpc.vpc_id
   subnet_ids = module.vpc.public_subnets
 }
 

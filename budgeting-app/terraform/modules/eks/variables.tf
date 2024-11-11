@@ -9,7 +9,7 @@ variable "subnet_ids" {
 }
 
 variable "ssh_key_name" {
-  description = "Optional SSH key name for accessing the worker nodes"
+  description = "SSH key name for accessing the worker nodes"
   type        = string
-  default     = ""
+  default     = "ilinca"  # Replace with your SSH key name
 }

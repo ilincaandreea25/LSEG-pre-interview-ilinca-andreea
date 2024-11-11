@@ -18,3 +18,9 @@ variable "db_password" {
   type        = string
   sensitive   = true
 }
+
+variable "ssh_key_name" {
+  description = "SSH key name for accessing the worker nodes"
+  type        = string
+  default     = "ilinca"  # Replace with your SSH key name
+}

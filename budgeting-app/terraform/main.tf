@@ -6,6 +6,11 @@ provider "aws" {
   region = var.region
 }
 
+resource "aws_key_pair" "eks_key_pair" {
+  key_name   = "ilinca"
+  public_key = file("ilinca.pub")
+}
+
 # VPC Module
 module "vpc" {
   source    = "./modules/vpc"
@@ -22,9 +27,12 @@ module "db_secrets" {
 
 # EKS Module
 module "eks" {
-  source     = "./modules/eks"
-  subnet_ids = module.vpc.public_subnets
+  source       = "./modules/eks"
+  vpc_id       = module.vpc.vpc_id
+  subnet_ids   = module.vpc.private_subnets
+  ssh_key_name = aws_key_pair.eks_key_pair.key_name  # Reference the key pair created above
 }
+
 
 # RDS Module with reference to Secrets Manager
 module "rds" {

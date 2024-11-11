@@ -18,10 +18,10 @@ output "eks_cluster_name" {
   value       = module.eks.cluster_name
 }
 
-output "eks_node_group_arn" {
-  description = "ARN of the EKS node group"
-  value       = module.eks.node_group_arn
-}
+# output "eks_node_group_arn" {
+#   description = "ARN of the EKS node group"
+#   value       = module.eks.node_group_arn
+# }
 
 output "rds_endpoint" {
   description = "Endpoint for the RDS instance"

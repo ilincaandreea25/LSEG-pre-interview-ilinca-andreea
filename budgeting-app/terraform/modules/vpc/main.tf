@@ -3,6 +3,9 @@ resource "aws_vpc" "main" {
   cidr_block           = var.vpc_cidr
   enable_dns_support   = true
   enable_dns_hostnames = true
+  tags = {
+    "Name" = "main"
+  }
 }
 
 # Public Subnets (create 2 public subnets)
@@ -22,7 +25,6 @@ resource "aws_subnet" "private" {
 
 # Allocate an Elastic IP for the NAT Gateway
 resource "aws_eip" "nat_eip" {
-  vpc = true
 }
 
 # NAT Gateway in the first public subnet
@@ -46,7 +48,6 @@ resource "aws_route_table" "public_route_table" {
   }
 }
 
-# Associate the public route table with public subnets
 resource "aws_route_table_association" "public_subnet_association" {
   count          = length(aws_subnet.public)
   subnet_id      = aws_subnet.public[count.index].id

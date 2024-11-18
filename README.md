@@ -19,7 +19,6 @@ This repository contains the implementation of a full-stack budgeting applicatio
   - [Container Orchestration (Kubernetes)](#container-orchestration-kubernetes)
 - [Setup and Installation](#setup-and-installation)
 - [Usage](#usage)
-- [Contributing](#contributing)
 - [License](#license)
 - [Contact](#contact)
 
@@ -269,26 +268,6 @@ Kubernetes configurations handle the deployment, scaling, and management of cont
    - Add and view transactions.
    - Visualize categorized financial data.
 3. Backend API can be accessed for direct interaction.
-
----
-
-## Contributing
-
-Contributions are welcome! To contribute:
-1. Fork the repository.
-2. Create a branch:
-   ```bash
-   git checkout -b feature/your-feature
-   ```
-3. Commit your changes:
-   ```bash
-   git commit -m "Add feature"
-   ```
-4. Push to the branch:
-   ```bash
-   git push origin feature/your-feature
-   ```
-5. Open a pull request.
 
 ---
 
